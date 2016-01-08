@@ -1,0 +1,28 @@
+<h2>Show account</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @account.name %>
+  </li>
+
+  <li>
+    <strong>Token:</strong>
+    <%= @account.token %>
+  </li>
+
+  <li>
+    <strong>Client:</strong>
+    <%= @account.client_id %>
+  </li>
+
+  <li>
+    <strong>Secret:</strong>
+    <%= @account.secret %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: account_path(@conn, :edit, @account) %>
+<%= link "Back", to: account_path(@conn, :index) %>

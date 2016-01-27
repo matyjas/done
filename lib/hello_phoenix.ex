@@ -12,7 +12,7 @@ defmodule HelloPhoenix do
       # Start the Ecto repository
       supervisor(HelloPhoenix.Repo, []),
       # Here you could define other workers and supervisors as children
-      # worker(HelloPhoenix.Worker, [arg1, arg2, arg3]),
+      worker(HelloPhoenix.HoursWorker, [])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

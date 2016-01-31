@@ -11,7 +11,6 @@ defmodule HelloPhoenix.HoursWorker do
 	end
 
 	def init(lang) do
-		:erlang.send_after(1000, self, :refresh)
 		{:ok, -1}
 	end
 
@@ -22,11 +21,12 @@ defmodule HelloPhoenix.HoursWorker do
 		end)
 		|> elem(1)
 		
-		:erlang.send_after(1000, self, :refresh)
+#		:erlang.send_after(1000, self, :refresh)
 		{:noreply, waka}
 	end
 
 	def handle_call(:get, _from, state) do
+		:erlang.send_after(0, self, :refresh)
 		{:reply, state, state}
 	end
 end
